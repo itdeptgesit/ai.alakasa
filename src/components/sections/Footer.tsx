@@ -1,8 +1,13 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import { MapPin, Phone, Printer, Mail, ChevronRight, Share2, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#061224] text-white pt-20 pb-10 border-t border-white/10">
       <div className="container max-w-[1440px] mx-auto px-4 md:px-8">
@@ -54,7 +59,7 @@ export const Footer = () => {
           {/* Office Address */}
           <div className="flex flex-col lg:col-span-4">
             <h4 className="text-sm font-bold mb-8 font-heading uppercase tracking-widest text-white">
-              Office Address
+              {t.footer.contactInfo}
             </h4>
             <ul className="space-y-6 text-sm text-gray-400">
               <li className="flex items-start gap-4">
@@ -123,7 +128,7 @@ export const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <p>© {new Date().getFullYear()} PT Alakasa Industrindo, Tbk. All Rights Reserved.</p>
+          <p>{t.footer.copyright}</p>
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Use</Link>

@@ -1,22 +1,27 @@
+"use client";
+
 import React from 'react';
 import { Button } from '../ui/Button';
 import { SectionTitle } from '../ui/SectionTitle';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionTitle 
-              title="About Alakasa" 
-              subtitle="Pioneer in the Aluminum industry in Indonesia with over 30 years’ experience"
+              title={t.about.title} 
+              subtitle={t.about.subtitle}
             />
             <p className="text-steel mb-8 leading-relaxed">
-              As a pioneer in the Aluminum industry in Indonesia with over 30 years’ experience, PT Alakasa Industry Tbk committed to establish an aluminum value chain from raw material to delivering high quality products. Long term relationships with local and global partners as well as value added processes become key factors to be a sustainable organization.
+              {t.about.desc}
             </p>
             <Button variant="primary">
-              Read More About Us
+              {t.about.btn}
             </Button>
           </div>
           

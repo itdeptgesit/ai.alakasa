@@ -1,36 +1,41 @@
+"use client";
+
 import React from 'react';
 import { Card } from '../ui/Card';
 import { SectionTitle } from '../ui/SectionTitle';
 import { Download, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const NewsReports = () => {
+  const { t } = useLanguage();
+
   const reports = [
     {
       id: 1,
-      category: 'ANNUAL REPORT',
-      title: 'Annual Report 2023',
+      category: t.news.catAnnual,
+      title: t.news.title1,
       date: '30 Apr 2024',
       link: '#'
     },
     {
       id: 2,
-      category: 'FINANCIAL REPORT',
-      title: 'Financial Report Q1 2024',
+      category: t.news.catFinancial,
+      title: t.news.title2,
       date: '28 Apr 2024',
       link: '#'
     },
     {
       id: 3,
-      category: 'AGM SUMMARY',
-      title: 'Summary of AGM 2024',
+      category: t.news.catAgm,
+      title: t.news.title3,
       date: '25 Apr 2024',
       link: '#'
     },
     {
       id: 4,
-      category: 'ANNOUNCEMENT',
-      title: 'Audit Committee Composition 2024',
+      category: t.news.catAnnouncement,
+      title: t.news.title4,
       date: '20 Apr 2024',
       link: '#'
     }
@@ -40,7 +45,7 @@ export const NewsReports = () => {
     <section id="news" className="py-24 bg-gray-50">
       <div className="container max-w-[1000px]">
         <SectionTitle 
-          title="News & Reports" 
+          title={t.news.title} 
           centered
         />
         
@@ -74,10 +79,10 @@ export const NewsReports = () => {
                     href={report.link}
                     className="text-sm font-semibold text-primary hover:text-navy transition-colors flex items-center gap-1.5"
                   >
-                    Read More <ArrowRight className="w-4 h-4" />
+                    {t.news.readMore} <ArrowRight className="w-4 h-4" />
                   </Link>
                   <div className="w-px h-8 bg-gray-200 hidden md:block"></div>
-                  <button className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-steel group-hover:bg-primary group-hover:text-white transition-all shadow-sm border border-gray-100 group-hover:border-primary" title="Download PDF">
+                  <button className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-steel group-hover:bg-primary group-hover:text-white transition-all shadow-sm border border-gray-100 group-hover:border-primary" title={t.news.downloadPdf}>
                     <Download className="w-5 h-5" />
                   </button>
               </div>
@@ -87,7 +92,7 @@ export const NewsReports = () => {
         
         <div className="mt-10 text-center">
           <Link href="/news" className="inline-flex items-center gap-2 text-navy font-semibold hover:text-primary transition-colors border-b-2 border-navy hover:border-primary pb-1">
-            View All Reports <ArrowRight className="w-4 h-4" />
+            {t.news.viewAll} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

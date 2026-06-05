@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import { ArrowUpRight, ArrowDownRight, Loader2 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const PERIODS = ['1D', '1W', '1M', '3M', '1Y', '5Y'];
 
 export const StockWidget = () => {
+  const { t } = useLanguage();
   const [activePeriod, setActivePeriod] = useState('1D');
   const [stockData, setStockData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,10 +43,10 @@ export const StockWidget = () => {
   const ChangeIcon = isPositive ? ArrowUpRight : ArrowDownRight;
   const themeColor = "#0057B8";
 
-  let timeString = 'Market Open 16 May 2024 14:37 WIB';
+  let timeString = `${t.investor.marketOpen} 16 May 2024 14:37 WIB`;
   if (stockData?.meta?.regularMarketTime) {
     const date = new Date(stockData.meta.regularMarketTime * 1000);
-    timeString = `Market Status as of ${date.toLocaleString('en-GB', {
+    timeString = `${t.investor.marketStatus} ${date.toLocaleString('en-GB', {
       day: 'numeric', month: 'short', year: 'numeric', 
       hour: '2-digit', minute: '2-digit', 
       timeZone: 'Asia/Jakarta'
@@ -105,12 +107,12 @@ export const StockWidget = () => {
         {/* Left Column: Stock Info */}
         <div className="p-8 lg:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
           <div>
-            <h2 className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">Investor Relations</h2>
+            <h2 className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">{t.investor.title}</h2>
             <h3 className="text-2xl font-bold font-heading mb-4">PT Alakasa Industrindo, Tbk</h3>
             
             <div className="flex items-center gap-3 mb-8">
               <span className="px-2 py-1 bg-white/10 rounded text-sm font-semibold">ALKA</span>
-              <span className="text-sm text-aluminum">Indonesia Stock Exchange</span>
+              <span className="text-sm text-aluminum">{t.investor.exchange}</span>
             </div>
             
             <div className="mb-2">
@@ -127,7 +129,7 @@ export const StockWidget = () => {
           </div>
           
           <Button variant="primary" className="mt-8 w-fit">
-            View Stock Details
+            {t.investor.viewDetails}
           </Button>
         </div>
         
@@ -185,15 +187,15 @@ export const StockWidget = () => {
         <div className="p-8 lg:p-10 flex flex-col justify-center gap-8">
           <div>
             <div className="text-3xl font-bold font-heading mb-1">32.99</div>
-            <div className="text-sm text-aluminum">EPS (IDR)</div>
+            <div className="text-sm text-aluminum">{t.investor.eps}</div>
           </div>
           <div>
             <div className="text-3xl font-bold font-heading mb-1">309.68 B</div>
-            <div className="text-sm text-aluminum">Market Cap (IDR)</div>
+            <div className="text-sm text-aluminum">{t.investor.marketCap}</div>
           </div>
           <div>
             <div className="text-3xl font-bold font-heading mb-1">21.67</div>
-            <div className="text-sm text-aluminum">P/E Ratio</div>
+            <div className="text-sm text-aluminum">{t.investor.peRatio}</div>
           </div>
         </div>
       </div>

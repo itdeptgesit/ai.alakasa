@@ -1,25 +1,30 @@
+"use client";
+
 import React from 'react';
 import { SectionTitle } from '../ui/SectionTitle';
 import { Leaf, Users, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const SustainabilitySection = () => {
+  const { t } = useLanguage();
+
   const pillars = [
     {
       id: 'environment',
-      title: 'Environment',
-      description: 'Minimizing our ecological footprint through efficient resource management and emission reduction initiatives.',
+      title: t.sustainability.envTitle,
+      description: t.sustainability.envDesc,
       icon: Leaf,
     },
     {
       id: 'people',
-      title: 'People',
-      description: 'Fostering a safe, inclusive workplace and empowering local communities through sustainable development programs.',
+      title: t.sustainability.peopleTitle,
+      description: t.sustainability.peopleDesc,
       icon: Users,
     },
     {
       id: 'governance',
-      title: 'Governance',
-      description: 'Upholding the highest standards of ethics, transparency, and accountability in all our business operations.',
+      title: t.sustainability.govTitle,
+      description: t.sustainability.govDesc,
       icon: ShieldCheck,
     }
   ];
@@ -30,11 +35,11 @@ export const SustainabilitySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionTitle 
-              title="Sustainable Growth Commitment" 
-              subtitle="Responsible operations for a better and sustainable future."
+              title={t.sustainability.title} 
+              subtitle={t.sustainability.subtitle}
             />
             <p className="text-steel mb-8 leading-relaxed">
-              At PT Alakasa Industrindo Tbk, sustainability is integrated into our core business strategy. We strive to create long-term value for our stakeholders while minimizing environmental impact and contributing positively to society.
+              {t.sustainability.desc}
             </p>
             
             <div className="space-y-6 mt-8">
@@ -65,7 +70,7 @@ export const SustainabilitySection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
                 <p className="text-white font-medium text-lg italic">
-                  "Innovating for a greener tomorrow."
+                  {t.sustainability.quote}
                 </p>
               </div>
             </div>

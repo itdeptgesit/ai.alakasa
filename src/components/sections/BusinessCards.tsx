@@ -1,24 +1,29 @@
+"use client";
+
 import React from 'react';
 import { SectionTitle } from '../ui/SectionTitle';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const BusinessCards = () => {
+  const { t } = useLanguage();
+
   const businesses = [
     {
       id: 'manufacturing',
-      title: 'Manufacturing',
+      title: t.business.manufacturing,
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&h=800&auto=format&fit=crop',
       link: '/business/manufacturing'
     },
     {
       id: 'trading',
-      title: 'Trading',
+      title: t.business.trading,
       image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1000&h=800&auto=format&fit=crop',
       link: '/business/trading'
     },
     {
       id: 'refinery',
-      title: 'Refinery',
+      title: t.business.refinery,
       image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&h=800&auto=format&fit=crop',
       link: '/business/refinery'
     }
@@ -28,8 +33,8 @@ export const BusinessCards = () => {
     <section id="business" className="pt-20 pb-0 bg-white w-full">
       <div className="container mb-12">
         <SectionTitle 
-          title="Our Business" 
-          subtitle="Discover our integrated aluminum business segments, designed to deliver value from raw materials to finished products."
+          title={t.business.title} 
+          subtitle={t.business.subtitle}
           centered
         />
       </div>

@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Pioneer of Aluminum Industry & Aluminum Raw Material Trading",
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jakarta.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col font-sans text-foreground bg-white">{children}</body>
+      <body className="min-h-screen flex flex-col font-sans text-foreground bg-white">
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

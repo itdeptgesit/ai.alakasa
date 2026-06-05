@@ -1,37 +1,42 @@
+"use client";
+
 import React from 'react';
 import { SectionTitle } from '../ui/SectionTitle';
 import { Building2, Users, UserCog, UsersRound, FileText, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const GovernanceSection = () => {
+  const { t } = useLanguage();
+
   const items = [
     {
       id: 'overview',
-      title: 'Governance Overview',
+      title: t.governance.overview,
       icon: Building2,
       link: '/governance/overview'
     },
     {
       id: 'boc',
-      title: 'Board of Commissioners',
+      title: t.governance.boc,
       icon: Users,
       link: '/governance/board-of-commissioners'
     },
     {
       id: 'bod',
-      title: 'Board of Directors',
+      title: t.governance.bod,
       icon: UserCog,
       link: '/governance/board-of-directors'
     },
     {
       id: 'committees',
-      title: 'Committees',
+      title: t.governance.committees,
       icon: UsersRound,
       link: '/governance/committees'
     },
     {
       id: 'policies',
-      title: 'Policies & Charter',
+      title: t.governance.policies,
       icon: FileText,
       link: '/governance/policies-charter'
     }
@@ -41,7 +46,7 @@ export const GovernanceSection = () => {
     <section id="governance" className="py-20 bg-white">
       <div className="container">
         <SectionTitle 
-          title="Corporate Governance" 
+          title={t.governance.title} 
           centered
         />
         

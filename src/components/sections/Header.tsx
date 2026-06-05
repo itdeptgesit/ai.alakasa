@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown, ChevronRight, Globe } from 'lucide-react';
-import { Button } from '../ui/Button';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
-  const [language, setLanguage] = useState<'EN' | 'ID'>('EN');
+  
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,70 +22,70 @@ export const Header = () => {
 
   const navItems = [
     { 
-      name: 'Home', 
+      name: t.header.home, 
       href: '/' 
     },
     { 
-      name: 'About Us', 
+      name: t.header.about, 
       href: '#about', 
       hasDropdown: true,
       submenu: {
         links: [
-          { label: 'Company Profile', href: '/about/profile' },
-          { label: 'Management', href: '/about/management' },
-          { label: 'Corporate Structure', href: '/about/structure' },
-          { label: 'Legal & Compliance', href: '/about/legal' },
+          { label: t.header.profile, href: '/about/profile' },
+          { label: t.header.management, href: '/about/management' },
+          { label: t.header.structure, href: '/about/structure' },
+          { label: t.header.legal, href: '/about/legal' },
         ],
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400&h=600&auto=format&fit=crop',
-        title: 'About Us',
-        description: 'Learn about our journey, core values and structure of our company.'
+        title: t.header.about,
+        description: t.header.aboutDesc
       }
     },
     { 
-      name: 'Business Activity', 
+      name: t.header.business, 
       href: '#business', 
       hasDropdown: true,
       submenu: {
         type: 'grid',
         items: [
-          { label: 'Manufacturing', image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=400&h=300&auto=format&fit=crop', href: '/business-activity/manufacturing' },
-          { label: 'Trading', image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=400&h=300&auto=format&fit=crop', href: '/business-activity/trading' },
-          { label: 'Refinery', image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&h=300&auto=format&fit=crop', href: '/business-activity/refinery' },
+          { label: t.header.manufacturing, image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=400&h=300&auto=format&fit=crop', href: '/business-activity/manufacturing' },
+          { label: t.header.trading, image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=400&h=300&auto=format&fit=crop', href: '/business-activity/trading' },
+          { label: t.header.refinery, image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&h=300&auto=format&fit=crop', href: '/business-activity/refinery' },
         ]
       }
     },
     { 
-      name: 'Corporate Governance', 
+      name: t.header.governance, 
       href: '#governance', 
       hasDropdown: true,
       submenu: {
         links: [
-          { label: 'Board Guidance', href: '/governance/board-guidance' },
-          { label: 'Charters & Code of Conduct', href: '/governance/charters' },
-          { label: 'Committees & Internal Audit', href: '/governance/committees' },
-          { label: 'Corporate Secretary', href: '/governance/secretary' },
+          { label: t.header.boardGuidance, href: '/governance/board-guidance' },
+          { label: t.header.charters, href: '/governance/charters' },
+          { label: t.header.committees, href: '/governance/committees' },
+          { label: t.header.secretary, href: '/governance/secretary' },
         ],
         image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=400&h=600&auto=format&fit=crop',
-        title: 'Corporate Governance',
-        description: 'Our commitment to transparency, accountability, and ethical business practices.'
+        title: t.header.governance,
+        description: t.header.governanceDesc
       }
     },
     { 
-      name: 'News & Report', 
+      name: t.header.news, 
       href: '#news', 
       hasDropdown: true,
       submenu: {
         links: [
-          { label: 'Annual Report', href: '/news/annual-report' },
-          { label: 'Financial Statement', href: '/news/financial-statement' },
-          { label: 'Announcement', href: '/news/announcement' },
+          { label: t.header.annualReport, href: '/news/annual-report' },
+          { label: t.header.financialStatement, href: '/news/financial-statement' },
+          { label: t.header.announcement, href: '/news/announcement' },
         ],
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&h=600&auto=format&fit=crop',
-        title: 'News & Report',
-        description: 'Stay updated with our latest financial reports and company announcements.'
+        title: t.header.news,
+        description: t.header.newsDesc
       }
     },
-    { name: 'Contact Us', href: '/contact' },
+    { name: t.header.contact, href: '/contact' },
   ];
 
   return (
@@ -186,7 +187,7 @@ export const Header = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/40 to-transparent"></div>
                             <div className="relative z-10 translate-y-2 group-hover/feature:translate-y-0 transition-transform duration-500">
-                              <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] text-white font-bold tracking-widest uppercase mb-3 border border-white/20">Featured</span>
+                              <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] text-white font-bold tracking-widest uppercase mb-3 border border-white/20">{t.header.featured}</span>
                               <h4 className="text-white font-bold text-lg xl:text-xl mb-2 font-heading">{item.submenu.title}</h4>
                               <p className="text-white/80 text-[11px] xl:text-xs leading-relaxed">{item.submenu.description}</p>
                             </div>
