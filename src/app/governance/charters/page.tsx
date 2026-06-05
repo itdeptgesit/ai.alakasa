@@ -23,7 +23,7 @@ export default function ChartersPage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-navy">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop" 
+            src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg" 
             alt="Charters and Code of Conduct" 
             className="w-full h-full object-cover grayscale"
           />
@@ -84,7 +84,7 @@ export default function ChartersPage() {
             {/* Image */}
             <div className="w-full">
               <img 
-                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&h=800&auto=format&fit=crop" 
+                src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s01-1.jpg" 
                 alt="Corporate Governance Documentation" 
                 className="w-full h-[500px] object-cover shadow-md rounded-sm"
               />
@@ -102,7 +102,7 @@ export default function ChartersPage() {
             {/* Image */}
             <div className="w-full order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&h=800&auto=format&fit=crop" 
+                src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s02.jpg" 
                 alt="Business Ethics" 
                 className="w-full h-[500px] object-cover shadow-md rounded-sm"
               />

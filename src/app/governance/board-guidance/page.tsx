@@ -23,7 +23,7 @@ export default function BoardGuidancePage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-navy">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2000&auto=format&fit=crop" 
+            src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg" 
             alt="Corporate Governance" 
             className="w-full h-full object-cover grayscale"
           />
@@ -78,7 +78,7 @@ export default function BoardGuidancePage() {
             {/* Image */}
             <div className="w-full">
               <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&h=800&auto=format&fit=crop" 
+                src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s01-1.jpg" 
                 alt="Board of Commissioners" 
                 className="w-full h-[450px] object-cover shadow-md rounded-sm"
               />
@@ -96,7 +96,7 @@ export default function BoardGuidancePage() {
             {/* Image */}
             <div className="w-full order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&h=800&auto=format&fit=crop" 
+                src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s05.jpg" 
                 alt="Board of Directors" 
                 className="w-full h-[450px] object-cover shadow-md rounded-sm"
               />

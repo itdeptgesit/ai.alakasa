@@ -23,7 +23,7 @@ export default function SecretaryPage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-navy">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+            src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg" 
             alt="Corporate Office" 
             className="w-full h-full object-cover grayscale"
           />
