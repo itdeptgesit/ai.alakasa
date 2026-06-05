@@ -86,12 +86,7 @@ export default function StructurePage() {
       </section>
 
       {/* Ownership Structure Chart */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-gray-50/50 to-transparent pointer-events-none"></div>
-        <div className="absolute -left-40 top-40 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-        <div className="absolute -right-40 top-80 w-96 h-96 bg-gray-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-
+      <section className="py-24 md:py-32 bg-gray-50 border-y border-gray-200 relative overflow-hidden">
         <div className="container max-w-[1200px] relative z-10">
           <SectionTitle 
             title="Ownership Structure" 
@@ -100,85 +95,57 @@ export default function StructurePage() {
           />
           
           {/* CSS Chart Container */}
-          <div className="mt-16 w-full max-w-5xl mx-auto p-8 md:p-12 lg:p-16 bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] overflow-x-auto">
-            <div className="min-w-[800px] flex flex-col items-center relative">
+          <div className="mt-20 w-full max-w-4xl mx-auto overflow-x-auto pb-8">
+            <div className="min-w-[700px] flex flex-col items-center">
               
-              {/* Top Level Branches */}
-              <div className="flex items-end justify-center gap-16 md:gap-32 w-full relative z-10">
+              {/* Row 1 & 2: Top Level Columns */}
+              <div className="w-full flex justify-between relative">
                 
-                {/* Left Branch: Soetoyo Family -> PT Gesit Perkasa */}
-                <div className="flex flex-col items-center w-80 relative group">
-                  {/* Soetoyo Family Node */}
-                  <div className="bg-gradient-to-b from-[#F8FAFC] to-white p-4 rounded-2xl shadow-sm border border-gray-100 w-56 text-center hover:shadow-md transition-all duration-300 relative z-20">
-                    <h3 className="text-navy font-bold text-base leading-tight">Soetoyo Family</h3>
+                {/* Left Column: Soetoyo & Gesit Perkasa */}
+                <div className="w-72 flex flex-col items-center">
+                  <div className="border border-gray-300 bg-white px-6 py-4 w-64 text-center shadow-sm">
+                    <h3 className="text-navy font-bold text-sm tracking-widest uppercase">Soetoyo Family</h3>
                   </div>
                   
-                  {/* Vertical Line from Soetoyo */}
-                  <div className="w-[2px] h-10 bg-gradient-to-b from-gray-200 to-primary/30 relative z-10"></div>
+                  {/* Line down to Gesit */}
+                  <div className="w-px h-10 bg-gray-400"></div>
                   
-                  {/* PT Gesit Perkasa Node */}
-                  <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_30px_rgb(0,0,0,0.06)] border border-gray-100 w-full text-center hover:-translate-y-1 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 relative z-20 overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary to-blue-400"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <h3 className="text-navy font-bold text-xl lg:text-2xl leading-tight mb-4 relative z-10">PT. Gesit Perkasa</h3>
-                    <div className="inline-flex items-center justify-center bg-blue-50/80 px-6 py-2 rounded-full relative z-10">
-                      <span className="text-primary font-black text-3xl tracking-tight">56,58%</span>
-                    </div>
+                  {/* Gesit Perkasa Node */}
+                  <div className="border-t-4 border-t-primary border-x border-b border-gray-200 bg-white p-8 w-full text-center shadow-sm">
+                    <h3 className="text-navy font-bold text-lg mb-2">PT. Gesit Perkasa</h3>
+                    <p className="text-3xl font-light text-gray-800">56,58%</p>
                   </div>
                   
-                  {/* Vertical line from Gesit down */}
-                  <div className="w-[2px] h-16 bg-primary/20 relative z-10"></div>
+                  {/* Line down to horizontal connector */}
+                  <div className="w-px h-12 bg-gray-400"></div>
                 </div>
 
-                {/* Right Branch: Masyarakat */}
-                <div className="flex flex-col items-center w-80 relative group">
+                {/* Right Column: Masyarakat */}
+                <div className="w-72 flex flex-col items-center justify-end">
                   {/* Masyarakat Node */}
-                  <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_30px_rgb(0,0,0,0.06)] border border-gray-100 w-full text-center hover:-translate-y-1 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 relative z-20 overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-steel to-gray-400"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <h3 className="text-navy font-bold text-xl lg:text-2xl leading-tight mb-1 relative z-10">Masyarakat</h3>
-                    <p className="text-xs font-medium text-gray-400 mb-5 relative z-10">(Masing-masing di bawah 5%)</p>
-                    
-                    <div className="inline-flex items-center justify-center bg-gray-50 px-6 py-2 rounded-full border border-gray-100 relative z-10">
-                      <span className="text-steel font-black text-3xl tracking-tight">43,42%</span>
-                    </div>
+                  <div className="border-t-4 border-t-steel border-x border-b border-gray-200 bg-white p-8 w-full text-center shadow-sm">
+                    <h3 className="text-navy font-bold text-lg mb-1">Masyarakat</h3>
+                    <p className="text-xs text-gray-500 mb-4">(Masing-masing di bawah 5%)</p>
+                    <p className="text-3xl font-light text-gray-800">43,42%</p>
                   </div>
                   
-                  {/* Vertical line from Masyarakat down */}
-                  <div className="w-[2px] h-16 bg-primary/20 relative z-10"></div>
+                  {/* Line down to horizontal connector */}
+                  <div className="w-px h-12 bg-gray-400"></div>
                 </div>
 
                 {/* Horizontal Connector Line */}
-                {/* Calculate exact width to span between the centers of the two 320px wide columns (w-80 = 320px) */}
-                <div className="absolute bottom-[64px] left-1/2 -translate-x-1/2 w-[448px] h-[2px] bg-primary/20 z-0 flex justify-between items-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary/40 -ml-1.5"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(37,99,235,0.5)] absolute left-1/2 -translate-x-1/2"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary/40 -mr-1.5"></div>
-                </div>
+                {/* 288px width columns (w-72) -> Center is 144px from left and right */}
+                <div className="absolute bottom-0 left-[144px] right-[144px] h-px bg-gray-400"></div>
               </div>
 
-              {/* Bottom Level: Target (PT Alakasa Industrindo) */}
-              <div className="flex flex-col items-center w-80 lg:w-[400px] relative -mt-[64px] z-20 group">
-                {/* Vertical line from horizontal connector down to target */}
-                <div className="w-[2px] h-16 bg-gradient-to-b from-primary/40 to-primary relative z-10"></div>
-                
-                {/* Alakasa Main Node */}
-                <div className="bg-navy p-8 md:p-10 rounded-[2rem] shadow-[0_20px_40px_rgba(6,18,36,0.15)] border border-white/10 w-full text-center hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(37,99,235,0.25)] transition-all duration-500 relative overflow-hidden">
-                  {/* Decorative mesh/gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-50"></div>
-                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary rounded-full blur-[80px] opacity-20"></div>
-                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                  
-                  <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6 backdrop-blur-md border border-white/20 shadow-inner group-hover:scale-110 transition-transform duration-500">
-                    <Landmark className="w-8 h-8 text-white drop-shadow-md" strokeWidth={1.5} />
-                  </div>
-                  
-                  <h3 className="text-white font-black text-2xl lg:text-3xl leading-tight font-heading relative z-10 tracking-wide drop-shadow-sm">
-                    PT. Alakasa<br/>Industrindo Tbk
-                  </h3>
-                </div>
+              {/* Row 3: Vertical stem to Target */}
+              <div className="w-px h-12 bg-gray-400"></div>
+
+              {/* Row 4: Target (PT Alakasa) */}
+              <div className="border border-navy bg-navy px-10 py-8 w-80 md:w-96 text-center shadow-md">
+                <h3 className="text-white font-bold text-xl tracking-wider uppercase leading-snug">
+                  PT. Alakasa<br/>Industrindo Tbk
+                </h3>
               </div>
 
             </div>
