@@ -6,8 +6,11 @@ import { ChevronRight, Download } from 'lucide-react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 
+const ITEMS_PER_PAGE = 8;
+
 export default function AnnualReportPage() {
   const [mounted, setMounted] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     setMounted(true);
@@ -41,6 +44,17 @@ export default function AnnualReportPage() {
     { bg: 'bg-[#0D2B1E]', yearColor: 'text-[#7DD4A8]', stripe: 'bg-[#4CAF7D]' },
     { bg: 'bg-[#2C1A0E]', yearColor: 'text-[#F0A865]', stripe: 'bg-[#D4813A]' },
   ];
+
+  const totalPages = Math.ceil(reports.length / ITEMS_PER_PAGE);
+  const paginatedReports = reports.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <main className="min-h-screen bg-white">
@@ -81,7 +95,7 @@ export default function AnnualReportPage() {
         <div className="container max-w-[1200px]">
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-            {reports.map((report, index) => {
+            {paginatedReports.map((report, index) => {
               const style = coverStyles[index % coverStyles.length];
               return (
                 <div key={index} className="group flex flex-col">
@@ -143,6 +157,49 @@ export default function AnnualReportPage() {
               );
             })}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="mt-16 flex items-center justify-center gap-1">
+              {/* Prev */}
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="w-9 h-9 flex items-center justify-center border border-gray-300 text-gray-500 hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm font-bold"
+              >
+                ‹
+              </button>
+
+              {/* Page Numbers */}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`w-9 h-9 flex items-center justify-center border text-sm font-bold transition-colors ${
+                    page === currentPage
+                      ? 'bg-navy border-navy text-white'
+                      : 'border-gray-300 text-gray-600 hover:border-primary hover:text-primary'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+
+              {/* Next */}
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="w-9 h-9 flex items-center justify-center border border-gray-300 text-gray-500 hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm font-bold"
+              >
+                ›
+              </button>
+            </div>
+          )}
+
+          {/* Page info */}
+          <p className="text-center text-xs text-gray-400 mt-4 tracking-widest uppercase">
+            Page {currentPage} of {totalPages} &mdash; {reports.length} Reports
+          </p>
 
         </div>
       </section>
