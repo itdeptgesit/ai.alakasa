@@ -39,9 +39,9 @@ export const HeroSection = () => {
         />
       ))}
       
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-navy/80 mix-blend-multiply z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-transparent z-[1]" />
+      {/* Overlays - Reduced Opacity */}
+      <div className="absolute inset-0 bg-navy/40 mix-blend-multiply z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/40 to-transparent z-[1]" />
 
       <div className="container relative z-10 py-20">
         <div className="max-w-3xl">
