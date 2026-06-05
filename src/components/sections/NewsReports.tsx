@@ -11,7 +11,6 @@ export const NewsReports = () => {
       category: 'ANNUAL REPORT',
       title: 'Annual Report 2023',
       date: '30 Apr 2024',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&h=600&auto=format&fit=crop',
       link: '#'
     },
     {
@@ -19,7 +18,6 @@ export const NewsReports = () => {
       category: 'FINANCIAL REPORT',
       title: 'Financial Report Q1 2024',
       date: '28 Apr 2024',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&h=600&auto=format&fit=crop',
       link: '#'
     },
     {
@@ -27,7 +25,6 @@ export const NewsReports = () => {
       category: 'AGM SUMMARY',
       title: 'Summary of AGM 2024',
       date: '25 Apr 2024',
-      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=800&h=600&auto=format&fit=crop',
       link: '#'
     },
     {
@@ -35,55 +32,63 @@ export const NewsReports = () => {
       category: 'ANNOUNCEMENT',
       title: 'Audit Committee Composition 2024',
       date: '20 Apr 2024',
-      image: 'https://images.unsplash.com/photo-1436450412740-6b988f486c6b?q=80&w=800&h=600&auto=format&fit=crop',
       link: '#'
     }
   ];
 
   return (
-    <section id="news" className="py-20 bg-gray-50">
-      <div className="container">
+    <section id="news" className="py-24 bg-gray-50">
+      <div className="container max-w-[1000px]">
         <SectionTitle 
           title="News & Reports" 
           centered
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {reports.map((report) => (
-            <Card key={report.id} className="group flex flex-col hover:shadow-xl transition-all duration-300">
-              <div className="relative h-40 overflow-hidden">
-                <img 
-                  src={report.image} 
-                  alt={report.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-2 py-1 bg-primary text-white text-[10px] font-bold tracking-wider rounded">
+        <div className="mt-14 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {reports.map((report, index) => (
+            <div 
+              key={report.id} 
+              className={`group flex flex-col md:flex-row md:items-center justify-between p-6 md:p-8 hover:bg-[#F8FAFC] transition-colors ${
+                index !== reports.length - 1 ? 'border-b border-gray-100' : ''
+              }`}
+            >
+              <div className="flex-1 md:pr-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[10px] font-bold text-primary tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full">
                     {report.category}
                   </span>
+                  <span className="text-sm text-steel font-medium flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                    {report.date}
+                  </span>
                 </div>
+                <h3 className="text-xl font-bold text-navy font-heading group-hover:text-primary transition-colors">
+                  <Link href={report.link}>
+                    {report.title}
+                  </Link>
+                </h3>
               </div>
               
-              <div className="p-6 flex-1 flex flex-col">
-                <span className="text-xs text-steel mb-2">{report.date}</span>
-                <h3 className="text-lg font-bold text-navy mb-4 font-heading group-hover:text-primary transition-colors line-clamp-2">
-                  {report.title}
-                </h3>
-                
-                <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <Link 
+              <div className="mt-6 md:mt-0 flex items-center gap-6">
+                 <Link 
                     href={report.link}
-                    className="text-sm font-semibold text-primary hover:text-navy transition-colors flex items-center gap-1"
+                    className="text-sm font-semibold text-primary hover:text-navy transition-colors flex items-center gap-1.5"
                   >
                     Read More <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <button className="text-steel hover:text-primary transition-colors" title="Download PDF">
+                  <div className="w-px h-8 bg-gray-200 hidden md:block"></div>
+                  <button className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-steel group-hover:bg-primary group-hover:text-white transition-all shadow-sm border border-gray-100 group-hover:border-primary" title="Download PDF">
                     <Download className="w-5 h-5" />
                   </button>
-                </div>
               </div>
-            </Card>
+            </div>
           ))}
+        </div>
+        
+        <div className="mt-10 text-center">
+          <Link href="/news" className="inline-flex items-center gap-2 text-navy font-semibold hover:text-primary transition-colors border-b-2 border-navy hover:border-primary pb-1">
+            View All Reports <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

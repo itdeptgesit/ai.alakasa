@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 
 // Official images for profiles
-const PENG_TJOAN = "https://ai.alakasa.co.id/wp-content/uploads/2022/10/peng-tjoan.jpg";
-const BAMBANG_RAHARDJA = "https://ai.alakasa.co.id/wp-content/uploads/2023/08/burhan-final.jpg";
-const SURYADI_HARTANTO = "https://ai.alakasa.co.id/wp-content/uploads/2022/10/suryadi-hertanto.jpg";
-const ANTONIUS_WAHYU = "https://ai.alakasa.co.id/wp-content/uploads/2024/07/11zon_resized-270x300.jpg";
+const PENG_TJOAN = "/Peng Tjoan.jpg";
+const BAMBANG_RAHARDJA = "/Bambang Rahardja Burhan.jpg";
+const SURYADI_HARTANTO = "/Suryadi-Hartanto.jpg";
+const ANTONIUS_WAHYU = "/Antonius Wahyu Djatmiko.jpg";
 
-const SUCIPTO_TANRO = "https://ai.alakasa.co.id/wp-content/uploads/2023/08/tanro-final-270x300.jpg";
-const FENDRA_HARTANTO = "https://ai.alakasa.co.id/wp-content/uploads/2023/08/fendra-final-270x300.jpg";
-const MARADONA_MANURUNG = "https://ai.alakasa.co.id/wp-content/uploads/2023/08/ulang-270x300.jpg";
+const SUCIPTO_TANRO = "/Sucipto Tanro.jpg";
+const FENDRA_HARTANTO = "/Fendra Hartanto.jpg";
+const MARADONA_MANURUNG = "/Maradona Parhorasan Manurung.jpg";
 
 type ProfileData = {
   id: string;
@@ -218,7 +218,7 @@ export const ManagementGallery = () => {
 
   const ProfileCard = ({ profile }: { profile: ProfileData }) => (
     <div 
-      className="group bg-white rounded-none border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative cursor-pointer"
+      className="group bg-white rounded-none border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative cursor-pointer h-full"
       onClick={() => setSelectedProfile(profile)}
     >
       <div className="w-full aspect-[4/5] overflow-hidden relative bg-gray-100">
@@ -233,7 +233,7 @@ export const ManagementGallery = () => {
         <h3 className="text-lg md:text-xl font-bold text-navy mb-1 font-heading group-hover:text-primary transition-colors">{profile.name}</h3>
         <p className="text-sm text-steel font-light">{profile.title}</p>
         
-        <div className="mt-8 flex items-center gap-2">
+        <div className="mt-auto pt-6 flex items-center gap-2">
           <span className="text-sm text-primary font-bold tracking-wider uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
             View Profile 
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

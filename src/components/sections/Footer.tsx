@@ -67,19 +67,19 @@ export const Footer = () => {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
                   <Phone className="w-4 h-4 text-white" />
                 </div>
-                <div className="flex flex-col space-y-1 pt-2 font-mono">
-                  <span>+62-21-4608855</span>
-                  <span>+62-21-31997275</span>
-                  <span>+62-21-31997276</span>
+                <div className="flex flex-wrap gap-2 pt-1.5">
+                  <a href="tel:+62214608855" className="bg-white/5 hover:bg-white/10 transition-colors px-3 py-1 rounded-md text-xs text-gray-300 tracking-wide">+62-21-4608855</a>
+                  <a href="tel:+622131997275" className="bg-white/5 hover:bg-white/10 transition-colors px-3 py-1 rounded-md text-xs text-gray-300 tracking-wide">+62-21-31997275</a>
+                  <a href="tel:+622131997276" className="bg-white/5 hover:bg-white/10 transition-colors px-3 py-1 rounded-md text-xs text-gray-300 tracking-wide">+62-21-31997276</a>
                 </div>
               </li>
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
                   <Printer className="w-4 h-4 text-white" />
                 </div>
-                <div className="flex flex-col space-y-1 pt-2 font-mono">
-                  <span>+62-21-4608856</span>
-                  <span>+62-21-31997278</span>
+                <div className="flex flex-wrap gap-2 pt-1.5">
+                  <span className="bg-white/5 px-3 py-1 rounded-md text-xs text-gray-300 tracking-wide">+62-21-4608856</span>
+                  <span className="bg-white/5 px-3 py-1 rounded-md text-xs text-gray-300 tracking-wide">+62-21-31997278</span>
                 </div>
               </li>
               <li className="flex items-center gap-4">

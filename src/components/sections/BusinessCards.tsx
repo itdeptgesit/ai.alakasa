@@ -7,7 +7,7 @@ export const BusinessCards = () => {
     {
       id: 'manufacturing',
       title: 'Manufacturing',
-      image: 'https://images.unsplash.com/photo-1580982333555-46c59b655fc9?q=80&w=1000&h=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&h=800&auto=format&fit=crop',
       link: '/business/manufacturing'
     },
     {
@@ -19,7 +19,7 @@ export const BusinessCards = () => {
     {
       id: 'refinery',
       title: 'Refinery',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&h=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&h=800&auto=format&fit=crop',
       link: '/business/refinery'
     }
   ];
@@ -34,13 +34,13 @@ export const BusinessCards = () => {
         />
       </div>
       
-      <div className="flex flex-col md:flex-row w-full h-[60vh] min-h-[400px] lg:min-h-[550px]">
+      <div className="flex flex-col md:flex-row w-full h-auto md:h-[60vh] min-h-[400px] lg:min-h-[550px]">
         {businesses.map((business) => {
           return (
             <Link 
               key={business.id} 
               href={business.link}
-              className="group relative flex-1 h-full overflow-hidden flex items-center justify-center cursor-pointer border-r border-white/10 last:border-0"
+              className="group relative flex-1 h-[200px] md:h-full overflow-hidden flex items-center justify-center cursor-pointer border-b md:border-b-0 md:border-r border-white/10 last:border-0"
             >
               <img 
                 src={business.image} 
