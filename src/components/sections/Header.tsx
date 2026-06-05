@@ -203,7 +203,7 @@ export const Header = () => {
 
           <div className="flex items-center pl-2 xl:pl-4">
             <button 
-              onClick={() => setLanguage(lang => lang === 'EN' ? 'ID' : 'EN')}
+              onClick={() => setLanguage(language === 'EN' ? 'ID' : 'EN')}
               className="relative flex items-center bg-white/10 hover:bg-white/20 rounded-full w-[48px] h-[26px] p-[2px] shadow-inner transition-colors cursor-pointer border border-gray-200/50"
             >
               <div 
@@ -307,7 +307,7 @@ export const Header = () => {
           <div className="flex items-center justify-between border-t border-gray-100 pt-5 mt-2">
             <span className="text-sm font-medium text-navy">Language ({language})</span>
             <button 
-              onClick={() => setLanguage(lang => lang === 'EN' ? 'ID' : 'EN')}
+              onClick={() => setLanguage(language === 'EN' ? 'ID' : 'EN')}
               className="relative flex items-center bg-gray-100 rounded-full w-[48px] h-[26px] p-[2px] shadow-inner transition-colors cursor-pointer border border-gray-200"
             >
               <div 
