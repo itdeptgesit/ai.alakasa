@@ -35,14 +35,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = language === 'ID' ? id : en;
 
-  if (!mounted) {
-    // Render hidden or empty until mounted to prevent hydration mismatch
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
-  }
-
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      {children}
+      {!mounted ? (
+        <div style={{ visibility: 'hidden' }}>{children}</div>
+      ) : (
+        children
+      )}
     </LanguageContext.Provider>
   );
 }
