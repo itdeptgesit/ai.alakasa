@@ -14,7 +14,7 @@ export default function ContactPage() {
     setMounted(true);
   }, []);
 
-  const { dict } = useLanguage();
+  const { t } = useLanguage();
 
   if (!mounted) return null;
 
@@ -35,17 +35,17 @@ export default function ContactPage() {
         
         <div className="container relative z-10">
           <div className="flex items-center gap-2 text-sm text-white/70 mb-8 font-medium">
-            <Link href="/" className="hover:text-white transition-colors">{dict.header.home}</Link>
+            <Link href="/" className="hover:text-white transition-colors">{t.header.home}</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">{dict.header.contact}</span>
+            <span className="text-white">{t.header.contact}</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
-            {dict.contactPage.heroTitle}
+            {t.contactPage.heroTitle}
           </h1>
           <div className="w-20 h-1.5 bg-primary mb-6"></div>
           <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
-            {dict.contactPage.heroDesc}
+            {t.contactPage.heroDesc}
           </p>
         </div>
       </section>
@@ -61,10 +61,10 @@ export default function ContactPage() {
               
               <div>
                 <h4 className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4">
-                  {dict.contactPage.headOffice}
+                  {t.contactPage.headOffice}
                 </h4>
                 <h2 className="text-3xl font-bold text-navy mb-6 font-heading">
-                  {dict.contactPage.getInTouch}
+                  {t.contactPage.getInTouch}
                 </h2>
                 <div className="w-12 h-1 bg-primary mb-8"></div>
               </div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-navy mb-2">{dict.contactPage.addressTitle}</h3>
+                  <h3 className="text-lg font-bold text-navy mb-2">{t.contactPage.addressTitle}</h3>
                   <p className="text-steel leading-relaxed">
                     PT. Alakasa Industrindo, Tbk<br/>
                     Jl. Pulogadung no. 4<br/>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-lg font-bold text-navy mb-1">{dict.contactPage.phoneFaxTitle}</h3>
+                  <h3 className="text-lg font-bold text-navy mb-1">{t.contactPage.phoneFaxTitle}</h3>
                   <div className="text-steel">
                     <span className="font-semibold text-navy">Phone:</span> +62-21-4608855<br/>
                     <span className="font-semibold text-navy">Phone:</span> +62-21-31997275<br/>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-navy mb-2">{dict.contactPage.emailTitle}</h3>
+                  <h3 className="text-lg font-bold text-navy mb-2">{t.contactPage.emailTitle}</h3>
                   <a href="mailto:corsec@ai.alakasa.co.id" className="text-primary hover:underline font-medium">
                     corsec@ai.alakasa.co.id
                   </a>
@@ -121,42 +121,42 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div className="bg-white p-8 md:p-10 border border-gray-300 shadow-sm relative">
                 <div className="absolute top-0 right-0 w-2 h-full bg-primary"></div>
-                <h3 className="text-2xl font-bold text-navy mb-8 font-heading">{dict.contactPage.formTitle}</h3>
+                <h3 className="text-2xl font-bold text-navy mb-8 font-heading">{t.contactPage.formTitle}</h3>
                 
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-navy">{dict.contactPage.formName}</label>
+                      <label className="text-sm font-bold text-navy">{t.contactPage.formName}</label>
                       <input 
                         type="text" 
-                        placeholder={dict.contactPage.formNamePlace} 
+                        placeholder={t.contactPage.formNamePlace} 
                         className="w-full px-4 py-3 bg-white border border-gray-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-navy">{dict.contactPage.formEmail}</label>
+                      <label className="text-sm font-bold text-navy">{t.contactPage.formEmail}</label>
                       <input 
                         type="email" 
-                        placeholder={dict.contactPage.formEmailPlace} 
+                        placeholder={t.contactPage.formEmailPlace} 
                         className="w-full px-4 py-3 bg-white border border-gray-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-navy">{dict.contactPage.formSubject}</label>
+                    <label className="text-sm font-bold text-navy">{t.contactPage.formSubject}</label>
                     <input 
                       type="text" 
-                      placeholder={dict.contactPage.formSubjectPlace} 
+                      placeholder={t.contactPage.formSubjectPlace} 
                       className="w-full px-4 py-3 bg-white border border-gray-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-navy">{dict.contactPage.formMessage}</label>
+                    <label className="text-sm font-bold text-navy">{t.contactPage.formMessage}</label>
                     <textarea 
                       rows={5}
-                      placeholder={dict.contactPage.formMessagePlace} 
+                      placeholder={t.contactPage.formMessagePlace} 
                       className="w-full px-4 py-3 bg-white border border-gray-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
                     ></textarea>
                   </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                     type="submit" 
                     className="bg-navy hover:bg-primary text-white font-bold py-4 px-8 uppercase tracking-widest text-sm transition-colors w-full md:w-auto"
                   >
-                    {dict.contactPage.formSubmit}
+                    {t.contactPage.formSubmit}
                   </button>
                 </form>
               </div>
