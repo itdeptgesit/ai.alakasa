@@ -71,26 +71,39 @@ export default function AnnualReportPage() {
             Download Annual Reports
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-12 bg-white border border-gray-300">
             {reports.map((report, index) => (
               <a 
                 key={index}
                 href={report.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white p-6 border border-gray-200 shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex items-center justify-between"
+                className={`group flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 transition-colors hover:bg-gray-50 ${
+                  index !== reports.length - 1 ? 'border-b border-gray-200' : ''
+                }`}
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-50 text-primary flex items-center justify-center font-bold text-lg border border-blue-100 group-hover:bg-primary group-hover:text-white transition-colors">
-                    {report.year}
+                <div className="flex items-center gap-6 md:gap-10">
+                  {/* Year */}
+                  <div className="w-16 md:w-20 shrink-0">
+                    <span className="text-3xl md:text-4xl font-light text-navy">{report.year}</span>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-navy group-hover:text-primary transition-colors">{report.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">PDF Document</p>
+                  
+                  {/* Title and Meta */}
+                  <div className="flex flex-col gap-1.5">
+                    <h3 className="text-lg md:text-xl font-bold text-navy group-hover:text-primary transition-colors uppercase tracking-wide">
+                      {report.title}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-1">
+                      <FileText className="w-4 h-4 text-gray-400" />
+                      <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">PDF Document</span>
+                    </div>
                   </div>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                  <Download className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" />
+                
+                {/* Download Action */}
+                <div className="mt-6 md:mt-0 flex items-center gap-3 text-primary font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform self-end md:self-auto">
+                  Download
+                  <Download className="w-5 h-5" strokeWidth={2} />
                 </div>
               </a>
             ))}
