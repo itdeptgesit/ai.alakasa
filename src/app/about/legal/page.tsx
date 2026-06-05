@@ -118,14 +118,14 @@ export default function LegalPage() {
                 key={index}
                 className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full"
               >
-                <div className="p-6 lg:p-8 border-b border-gray-200">
-                  <h3 className="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-6">
+                <div className="p-6 lg:p-8 flex flex-col flex-grow">
+                  <h3 className="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-6 min-h-[2.5rem]">
                     {inst.role}
                   </h3>
                   
                   <div className="flex items-start gap-4">
                     <Landmark className="w-5 h-5 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
-                    <div>
+                    <div className="flex flex-col">
                       <h4 className="text-lg font-bold text-navy leading-snug mb-3">
                         {inst.name}
                       </h4>
@@ -143,33 +143,42 @@ export default function LegalPage() {
                   </div>
                 </div>
 
-                <div className="mt-auto p-6 lg:p-8 bg-gray-50 flex flex-col gap-4 text-sm border-t border-gray-200">
+                <div className="mt-auto p-6 lg:p-8 bg-gray-50 flex flex-col justify-center gap-4 text-sm border-t border-gray-200 min-h-[140px]">
                   {inst.phone && (
                     <div className="flex items-start gap-4">
                       <Phone className="w-4 h-4 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-gray-800"><strong className="text-navy font-bold uppercase tracking-wider text-[11px] mr-2">Phone</strong> {inst.phone}</span>
+                      <div className="flex items-start w-full">
+                        <strong className="text-navy font-bold uppercase tracking-wider text-[11px] shrink-0 w-14 mt-0.5">Phone</strong> 
+                        <span className="text-gray-800">{inst.phone}</span>
+                      </div>
                     </div>
                   )}
                   
                   {inst.fax && (
                     <div className="flex items-start gap-4">
                       <Printer className="w-4 h-4 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-gray-800"><strong className="text-navy font-bold uppercase tracking-wider text-[11px] mr-2">Fax</strong> {inst.fax}</span>
+                      <div className="flex items-start w-full">
+                        <strong className="text-navy font-bold uppercase tracking-wider text-[11px] shrink-0 w-14 mt-0.5">Fax</strong> 
+                        <span className="text-gray-800">{inst.fax}</span>
+                      </div>
                     </div>
                   )}
 
                   {inst.emails && (
                     <div className="flex items-start gap-4">
                       <Mail className="w-4 h-4 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-1 w-full">
                         {inst.emails.map((email, idx) => (
-                          <span key={idx} className="text-gray-800 break-all flex items-center">
-                            {idx === 0 && <strong className="text-navy font-bold uppercase tracking-wider text-[11px] mr-2">Email</strong>}
-                            {idx > 0 && <span className="w-[38px] mr-2 hidden md:inline-block"></span>}
-                            <a href={`mailto:${email}`} className="hover:text-primary transition-colors">
+                          <div key={idx} className="flex items-start w-full">
+                            {idx === 0 ? (
+                              <strong className="text-navy font-bold uppercase tracking-wider text-[11px] shrink-0 w-14 mt-0.5">Email</strong>
+                            ) : (
+                              <div className="w-14 shrink-0"></div>
+                            )}
+                            <a href={`mailto:${email}`} className="text-gray-800 hover:text-primary transition-colors break-all">
                               {email}
                             </a>
-                          </span>
+                          </div>
                         ))}
                       </div>
                     </div>
