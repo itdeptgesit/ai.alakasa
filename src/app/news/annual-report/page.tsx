@@ -19,30 +19,22 @@ export default function AnnualReportPage() {
   if (!mounted) return null;
 
   const reports = [
-    { year: '2025', title: 'Annual Report 2025', url: 'http://ai.alakasa.co.id/wp-content/uploads/2026/04/ANNUAL-REPORT-2025-PT.-ALAKASA-INDUSTRINDO-TBK.pdf' },
-    { year: '2024', title: 'Annual Report 2024', url: 'https://ai.alakasa.co.id/wp-content/uploads/2025/04/Annual%20Report%202024%20PT.%20Alakasa%20Industrindo%20Tbk.pdf' },
-    { year: '2023', title: 'Annual Report 2023', url: 'http://ai.alakasa.co.id/wp-content/uploads/2024/04/ANNUAL-REPORT-2023-AI-TBK-ALKA.pdf' },
-    { year: '2022', title: 'Annual Report 2022', url: 'http://ai.alakasa.co.id/wp-content/uploads/2023/05/AR-ALAKASA-2022_FINAL.pdf' },
-    { year: '2021', title: 'Annual Report 2021', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/ANNUAL-REPORT-2021-AI-Tbk.pdf' },
-    { year: '2020', title: 'Annual Report 2020', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/ANNUAL-REPORT-2020-ALKA.pdf' },
-    { year: '2019', title: 'Annual Report 2019', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2019-PT-Alakasa-Industrindo-Tbk.pdf' },
-    { year: '2018', title: 'Annual Report 2018', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2018.pdf' },
-    { year: '2017', title: 'Annual Report 2017', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2017.pdf' },
-    { year: '2016', title: 'Annual Report 2016', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2016.pdf' },
-    { year: '2015', title: 'Annual Report 2015', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2015.pdf' },
-    { year: '2014', title: 'Annual Report 2014', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2014.pdf' },
-    { year: '2013', title: 'Annual Report 2013', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2013.pdf' },
-    { year: '2012', title: 'Annual Report 2012', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2012.pdf' },
-    { year: '2011', title: 'Annual Report 2011', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2011.pdf' },
-    { year: '2010', title: 'Annual Report 2010', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2010.pdf' },
-  ];
-
-  // Cover palette: cycle through these for visual variety
-  const coverStyles = [
-    { bg: 'bg-[#0B1F3A]', yearColor: 'text-[#C8A96E]', stripe: 'bg-[#C8A96E]' },
-    { bg: 'bg-[#1A3A5C]', yearColor: 'text-[#7BB8F0]', stripe: 'bg-[#4A90D9]' },
-    { bg: 'bg-[#0D2B1E]', yearColor: 'text-[#7DD4A8]', stripe: 'bg-[#4CAF7D]' },
-    { bg: 'bg-[#2C1A0E]', yearColor: 'text-[#F0A865]', stripe: 'bg-[#D4813A]' },
+    { year: '2025', title: 'Annual Report 2025', url: 'http://ai.alakasa.co.id/wp-content/uploads/2026/04/ANNUAL-REPORT-2025-PT.-ALAKASA-INDUSTRINDO-TBK.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg', accent: '#C8A96E' },
+    { year: '2024', title: 'Annual Report 2024', url: 'https://ai.alakasa.co.id/wp-content/uploads/2025/04/Annual%20Report%202024%20PT.%20Alakasa%20Industrindo%20Tbk.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s01-1.jpg', accent: '#4A90D9' },
+    { year: '2023', title: 'Annual Report 2023', url: 'http://ai.alakasa.co.id/wp-content/uploads/2024/04/ANNUAL-REPORT-2023-AI-TBK-ALKA.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s02.jpg', accent: '#C8A96E' },
+    { year: '2022', title: 'Annual Report 2022', url: 'http://ai.alakasa.co.id/wp-content/uploads/2023/05/AR-ALAKASA-2022_FINAL.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s05.jpg', accent: '#4A90D9' },
+    { year: '2021', title: 'Annual Report 2021', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/ANNUAL-REPORT-2021-AI-Tbk.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg', accent: '#C8A96E' },
+    { year: '2020', title: 'Annual Report 2020', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/ANNUAL-REPORT-2020-ALKA.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s01-1.jpg', accent: '#4A90D9' },
+    { year: '2019', title: 'Annual Report 2019', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2019-PT-Alakasa-Industrindo-Tbk.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s02.jpg', accent: '#C8A96E' },
+    { year: '2018', title: 'Annual Report 2018', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2018.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s05.jpg', accent: '#4A90D9' },
+    { year: '2017', title: 'Annual Report 2017', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2017.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg', accent: '#C8A96E' },
+    { year: '2016', title: 'Annual Report 2016', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2016.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s01-1.jpg', accent: '#4A90D9' },
+    { year: '2015', title: 'Annual Report 2015', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2015.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s02.jpg', accent: '#C8A96E' },
+    { year: '2014', title: 'Annual Report 2014', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2014.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s05.jpg', accent: '#4A90D9' },
+    { year: '2013', title: 'Annual Report 2013', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2013.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg', accent: '#C8A96E' },
+    { year: '2012', title: 'Annual Report 2012', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2012.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s01-1.jpg', accent: '#4A90D9' },
+    { year: '2011', title: 'Annual Report 2011', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2011.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s02.jpg', accent: '#C8A96E' },
+    { year: '2010', title: 'Annual Report 2010', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2010.pdf', photo: 'https://ai.alakasa.co.id/wp-content/uploads/2022/12/s05.jpg', accent: '#4A90D9' },
   ];
 
   const totalPages = Math.ceil(reports.length / ITEMS_PER_PAGE);
@@ -90,72 +82,106 @@ export default function AnnualReportPage() {
         </div>
       </section>
 
-      {/* Main Content: Cover Grid */}
-      <section className="py-20 md:py-28 bg-[#F8FAFC]">
+      {/* Main Content: Book Cover Grid */}
+      <section className="py-20 md:py-28 bg-[#F0F2F5]">
         <div className="container max-w-[1200px]">
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-            {paginatedReports.map((report, index) => {
-              const style = coverStyles[index % coverStyles.length];
-              return (
-                <div key={index} className="group flex flex-col">
-                  {/* Book Cover */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {paginatedReports.map((report, index) => (
+              <div key={index} className="group flex flex-col items-center">
+
+                {/* 3D Book Wrapper */}
+                <div className="relative w-full" style={{ perspective: '800px' }}>
                   <a
                     href={report.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`relative flex flex-col justify-between p-5 h-[220px] md:h-[260px] ${style.bg} overflow-hidden transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl cursor-pointer`}
+                    className="block relative w-full"
+                    style={{
+                      transformStyle: 'preserve-3d',
+                      transition: 'transform 0.4s ease',
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.transform = 'rotateY(-8deg)')}
+                    onMouseLeave={e => (e.currentTarget.style.transform = 'rotateY(0deg)')}
                   >
-                    {/* Top accent stripe */}
-                    <div className={`absolute top-0 left-0 w-full h-1 ${style.stripe}`} />
+                    {/* Book Spine (left edge) */}
+                    <div
+                      className="absolute left-0 top-0 h-full w-[14px] z-10"
+                      style={{
+                        background: `linear-gradient(to right, #000000aa, ${report.accent}55, transparent)`,
+                        transformOrigin: 'left center',
+                      }}
+                    />
 
-                    {/* Top: Brand mark */}
-                    <div className="flex items-center gap-2">
-                      <div className={`w-4 h-4 ${style.stripe} opacity-80`} />
-                      <span className="text-white/50 text-[9px] font-bold tracking-[0.25em] uppercase">ALKA</span>
-                    </div>
-
-                    {/* Middle: Year */}
-                    <div>
-                      <div className={`text-5xl md:text-6xl font-black leading-none mb-1 ${style.yearColor}`}>
-                        {report.year}
-                      </div>
-                      <div className="text-white/40 text-[9px] font-bold tracking-[0.3em] uppercase">
-                        Annual Report
-                      </div>
-                    </div>
-
-                    {/* Bottom: Company name */}
-                    <div>
-                      <div className={`w-6 h-[2px] ${style.stripe} mb-2`} />
-                      <p className="text-white/35 text-[8px] leading-tight uppercase tracking-wider">
-                        PT Alakasa<br />Industrindo Tbk
-                      </p>
-                    </div>
-
-                    {/* Decorative corner */}
-                    <div className={`absolute -bottom-8 -right-8 w-24 h-24 ${style.stripe} opacity-10`} />
-
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </a>
-
-                  {/* Below Cover: Title & Download */}
-                  <div className="pt-4 pb-2">
-                    <p className="text-sm font-bold text-navy mb-2">{report.title}</p>
-                    <a
-                      href={report.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-primary text-[11px] font-bold uppercase tracking-widest hover:gap-2.5 transition-all duration-200"
+                    {/* Cover Face */}
+                    <div
+                      className="relative w-full overflow-hidden"
+                      style={{
+                        height: '280px',
+                        boxShadow: '6px 6px 20px rgba(0,0,0,0.35), 2px 2px 6px rgba(0,0,0,0.2)',
+                      }}
                     >
-                      <Download className="w-3.5 h-3.5" />
-                      Download
-                    </a>
-                  </div>
+                      {/* Background photo */}
+                      <img
+                        src={report.photo}
+                        alt={report.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+
+                      {/* Dark gradient overlay — bottom to top */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+
+                      {/* Accent top bar */}
+                      <div className="absolute top-0 left-0 right-0 h-[4px]" style={{ background: report.accent }} />
+
+                      {/* Content overlay */}
+                      <div className="absolute inset-0 flex flex-col justify-between p-4">
+                        {/* Top: Logo mark */}
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-3 h-3" style={{ background: report.accent }} />
+                          <span className="text-white/70 text-[8px] font-black tracking-[0.3em] uppercase">ALKA</span>
+                        </div>
+
+                        {/* Bottom: Year + title */}
+                        <div>
+                          <div
+                            className="text-5xl font-black leading-none mb-1"
+                            style={{ color: report.accent, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
+                          >
+                            {report.year}
+                          </div>
+                          <div className="text-white/60 text-[8px] font-bold tracking-[0.25em] uppercase mb-2">
+                            Annual Report
+                          </div>
+                          <div
+                            className="w-8 h-[2px] mb-2"
+                            style={{ background: report.accent }}
+                          />
+                          <p className="text-white/50 text-[7px] uppercase tracking-wider leading-tight">
+                            PT Alakasa Industrindo Tbk
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-              );
-            })}
+
+                {/* Below book: label + download */}
+                <div className="w-full pt-4 text-left">
+                  <p className="text-sm font-bold text-navy mb-2">{report.title}</p>
+                  <a
+                    href={report.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-primary text-[11px] font-bold uppercase tracking-widest hover:gap-3 transition-all duration-200"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    Download
+                  </a>
+                </div>
+
+              </div>
+            ))}
           </div>
 
           {/* Pagination Controls */}
