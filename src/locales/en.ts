@@ -116,5 +116,24 @@ export const en = {
     contactInfo: 'Contact Information',
     copyright: '© 2026 PT Alakasa Industrindo Tbk. All rights reserved.',
     address: 'Jl. Pulogadung no. 4, Kawasan Industri Pulogadung, DKI Jakarta 13920, Indonesia'
+  },
+  contactPage: {
+    heroTitle: 'Contact Us',
+    heroDesc: 'Reach out to our team for business inquiries, investor relations, or general information about PT Alakasa Industrindo Tbk.',
+    headOffice: 'Head Office',
+    getInTouch: 'Get in Touch',
+    addressTitle: 'Company Address',
+    phoneFaxTitle: 'Phone & Fax',
+    emailTitle: 'Email Address',
+    formTitle: 'Send us a message',
+    formName: 'Your Name',
+    formNamePlace: 'John Doe',
+    formEmail: 'Email Address',
+    formEmailPlace: 'john@company.com',
+    formSubject: 'Subject',
+    formSubjectPlace: 'How can we help you?',
+    formMessage: 'Message',
+    formMessagePlace: 'Write your message here...',
+    formSubmit: 'Send Message'
   }
 };

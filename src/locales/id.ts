@@ -114,7 +114,26 @@ export const id = {
   footer: {
     quickLinks: 'Tautan Cepat',
     contactInfo: 'Informasi Kontak',
-    copyright: '© 2026 PT Alakasa Industrindo Tbk. Hak cipta dilindungi.',
+    copyright: '© 2026 PT Alakasa Industrindo Tbk. Hak cipta dilindungi undang-undang.',
     address: 'Jl. Pulogadung no. 4, Kawasan Industri Pulogadung, DKI Jakarta 13920, Indonesia'
+  },
+  contactPage: {
+    heroTitle: 'Hubungi Kami',
+    heroDesc: 'Hubungi tim kami untuk pertanyaan bisnis, hubungan investor, atau informasi umum mengenai PT Alakasa Industrindo Tbk.',
+    headOffice: 'Kantor Pusat',
+    getInTouch: 'Tetap Terhubung',
+    addressTitle: 'Alamat Perusahaan',
+    phoneFaxTitle: 'Telepon & Faks',
+    emailTitle: 'Alamat Email',
+    formTitle: 'Kirimkan pesan',
+    formName: 'Nama Anda',
+    formNamePlace: 'Budi Santoso',
+    formEmail: 'Alamat Email',
+    formEmailPlace: 'budi@perusahaan.com',
+    formSubject: 'Subjek',
+    formSubjectPlace: 'Bagaimana kami dapat membantu Anda?',
+    formMessage: 'Pesan',
+    formMessagePlace: 'Tulis pesan Anda di sini...',
+    formSubmit: 'Kirim Pesan'
   }
 };
