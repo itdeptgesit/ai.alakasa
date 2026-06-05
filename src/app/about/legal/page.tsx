@@ -116,23 +116,20 @@ export default function LegalPage() {
             {institutions.map((inst, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-3xl shadow-soft border border-gray-100 hover:shadow-lg transition-all duration-300 group flex flex-col h-full relative overflow-hidden"
+                className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full"
               >
-                {/* Accent line at the top */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-blue-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold text-primary mb-6 group-hover:text-navy transition-colors">
+                <div className="p-6 lg:p-8 border-b border-gray-200">
+                  <h3 className="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-6">
                     {inst.role}
                   </h3>
                   
-                  <div className="flex items-start gap-3">
-                    <Landmark className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-4">
+                    <Landmark className="w-5 h-5 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <h4 className="text-base font-bold text-navy leading-relaxed mb-2">
+                      <h4 className="text-lg font-bold text-navy leading-snug mb-3">
                         {inst.name}
                       </h4>
-                      <p className="text-sm text-steel leading-relaxed">
+                      <p className="text-sm text-gray-700 leading-relaxed font-medium">
                         {inst.addressLine1}
                         <br />
                         {inst.addressLine2.split('\n').map((line, i) => (
@@ -146,34 +143,29 @@ export default function LegalPage() {
                   </div>
                 </div>
 
-                <div className="mt-auto flex flex-col gap-3 pt-6 border-t border-gray-50">
+                <div className="mt-auto p-6 lg:p-8 bg-gray-50 flex flex-col gap-4 text-sm border-t border-gray-200">
                   {inst.phone && (
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-blue-50/50 flex items-center justify-center shrink-0 border border-blue-100/50">
-                        <Phone className="w-4 h-4 text-primary" />
-                      </div>
-                      <span className="text-sm text-steel"><strong className="text-gray-700 font-semibold mr-1">Phone:</strong> {inst.phone}</span>
+                    <div className="flex items-start gap-4">
+                      <Phone className="w-4 h-4 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-800"><strong className="text-navy font-bold uppercase tracking-wider text-[11px] mr-2">Phone</strong> {inst.phone}</span>
                     </div>
                   )}
                   
                   {inst.fax && (
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-blue-50/50 flex items-center justify-center shrink-0 border border-blue-100/50">
-                        <Printer className="w-4 h-4 text-primary" />
-                      </div>
-                      <span className="text-sm text-steel"><strong className="text-gray-700 font-semibold mr-1">Fax.:</strong> {inst.fax}</span>
+                    <div className="flex items-start gap-4">
+                      <Printer className="w-4 h-4 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-gray-800"><strong className="text-navy font-bold uppercase tracking-wider text-[11px] mr-2">Fax</strong> {inst.fax}</span>
                     </div>
                   )}
 
                   {inst.emails && (
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-blue-50/50 flex items-center justify-center shrink-0 border border-blue-100/50 mt-0.5">
-                        <Mail className="w-4 h-4 text-primary" />
-                      </div>
-                      <div className="flex flex-col">
+                    <div className="flex items-start gap-4">
+                      <Mail className="w-4 h-4 text-navy shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <div className="flex flex-col gap-1">
                         {inst.emails.map((email, idx) => (
-                          <span key={idx} className="text-sm text-steel break-all">
-                            {idx === 0 && <strong className="text-gray-700 font-semibold mr-1">Email:</strong>}
+                          <span key={idx} className="text-gray-800 break-all flex items-center">
+                            {idx === 0 && <strong className="text-navy font-bold uppercase tracking-wider text-[11px] mr-2">Email</strong>}
+                            {idx > 0 && <span className="w-[38px] mr-2 hidden md:inline-block"></span>}
                             <a href={`mailto:${email}`} className="hover:text-primary transition-colors">
                               {email}
                             </a>
@@ -200,7 +192,7 @@ export default function LegalPage() {
             centered
           />
           
-          <div className="mt-16 bg-white rounded-3xl shadow-soft border border-gray-100 overflow-hidden">
+          <div className="mt-16 bg-white border border-gray-300 shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
