@@ -154,7 +154,7 @@ export default function StructurePage() {
       </section>
 
       {/* Subsidiaries Section */}
-      <section className="py-20 md:py-32 bg-[#F8FAFC] border-t border-gray-100">
+      <section className="py-24 md:py-32 bg-white border-t border-gray-200">
         <div className="container max-w-[1200px]">
           <SectionTitle 
             title="Our Subsidiaries" 
@@ -162,50 +162,50 @@ export default function StructurePage() {
             centered
           />
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
             {subsidiaries.map((sub, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-3xl shadow-soft border border-gray-100 hover:shadow-lg hover:border-blue-100 transition-all duration-300 group flex flex-col h-full"
+                className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
               >
-                <div className="flex items-start justify-between mb-6">
+                {/* Header */}
+                <div className="flex items-start justify-between p-6 lg:p-8 border-b border-gray-200">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      <Building2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                    <div className="w-10 h-10 border border-gray-200 flex items-center justify-center shrink-0 bg-gray-50">
+                      <Building2 className="w-5 h-5 text-navy" strokeWidth={1.5} />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-navy leading-tight">{sub.name}</h3>
-                      {sub.alias && <p className="text-xs text-gray-500 mt-1">{sub.alias}</p>}
+                      {sub.alias && <p className="text-xs text-gray-500 mt-1.5">{sub.alias}</p>}
                     </div>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold shrink-0 ${
-                    sub.status === 'Operating' ? 'bg-green-50 text-green-600' : 'bg-gray-100 text-gray-500'
+                  <span className={`px-3 py-1 text-[10px] font-bold tracking-widest uppercase border ${
+                    sub.status === 'Operating' ? 'border-green-600 text-green-700 bg-green-50/50' : 'border-gray-400 text-gray-600 bg-gray-50'
                   }`}>
                     {sub.status}
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-8 flex-grow">
-                  <div className="p-4 bg-gray-50 rounded-2xl">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Business Field</p>
-                    <p className="text-sm font-bold text-navy flex items-start gap-2">
-                      <Briefcase className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      {sub.field}
-                    </p>
+                {/* Body Table */}
+                <div className="p-6 lg:p-8 grid grid-cols-1 gap-y-4 flex-grow text-sm">
+                  <div className="flex justify-between items-start border-b border-gray-100 pb-3">
+                    <span className="text-gray-500 uppercase tracking-widest font-bold text-[11px] w-1/3">Business Field</span>
+                    <span className="font-semibold text-navy text-right w-2/3 leading-snug">{sub.field}</span>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-2xl">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Ownership</p>
-                    <p className="text-sm font-bold text-navy">{sub.ownership}</p>
+                  <div className="flex justify-between items-start border-b border-gray-100 pb-3">
+                    <span className="text-gray-500 uppercase tracking-widest font-bold text-[11px] w-1/3">Ownership</span>
+                    <span className="font-semibold text-navy text-right w-2/3">{sub.ownership}</span>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-2xl col-span-2">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Commercial Activities</p>
-                    <p className="text-sm font-bold text-navy">{sub.activities}</p>
+                  <div className="flex justify-between items-start border-b border-gray-100 pb-3">
+                    <span className="text-gray-500 uppercase tracking-widest font-bold text-[11px] w-1/3">Commercial Activities</span>
+                    <span className="font-semibold text-navy text-right w-2/3">{sub.activities}</span>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 pt-6 border-t border-gray-100 mt-auto">
-                  <MapPin className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                  <p className="text-sm text-steel leading-relaxed">
+                {/* Footer Address */}
+                <div className="flex items-start gap-3 p-6 lg:p-8 bg-gray-50 border-t border-gray-200 mt-auto">
+                  <MapPin className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <p className="text-xs text-gray-700 leading-relaxed font-medium">
                     {sub.address}
                   </p>
                 </div>
