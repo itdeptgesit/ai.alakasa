@@ -48,17 +48,9 @@ export const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-heading">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-aluminum mb-10 leading-relaxed font-sans max-w-2xl">
+          <p className="text-lg md:text-xl text-aluminum leading-relaxed font-sans max-w-2xl">
             {t.hero.desc}
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary" size="lg" className="rounded-full px-8 gap-2 group">
-              {t.hero.aboutBtn} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-8 border-white text-white hover:bg-white hover:text-navy gap-2 group">
-              {t.hero.businessBtn} <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
         </div>
       </div>
     </section>
