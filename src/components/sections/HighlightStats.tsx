@@ -1,32 +1,37 @@
+"use client";
+
 import React from 'react';
 import { Card } from '../ui/Card';
 import { Activity, Link as LinkIcon, Globe, Leaf } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const HighlightStats = () => {
+  const { t } = useLanguage();
+
   const highlights = [
     {
       icon: Activity,
-      title: '30+',
-      subtitle: 'Years of Experience',
-      description: 'Three decades of expertise in the aluminum industry.',
+      title: t.highlights.expTitle,
+      subtitle: t.highlights.expSub,
+      description: t.highlights.expDesc,
     },
     {
       icon: LinkIcon,
-      title: 'Integrated',
-      subtitle: 'Value Chain',
-      description: 'From raw materials, manufacturing, trading to refining.',
+      title: t.highlights.intTitle,
+      subtitle: t.highlights.intSub,
+      description: t.highlights.intDesc,
     },
     {
       icon: Globe,
-      title: 'Global',
-      subtitle: 'Partners',
-      description: 'Serving customers in domestic and international markets.',
+      title: t.highlights.globTitle,
+      subtitle: t.highlights.globSub,
+      description: t.highlights.globDesc,
     },
     {
       icon: Leaf,
-      title: 'Sustainability',
-      subtitle: 'Commitment',
-      description: 'Responsible operations for a better, sustainable future.',
+      title: t.highlights.susTitle,
+      subtitle: t.highlights.susSub,
+      description: t.highlights.susDesc,
     },
   ];
 

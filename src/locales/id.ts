@@ -46,6 +46,20 @@ export const id = {
     desc: 'Sebagai pelopor dalam industri Aluminium di Indonesia dengan pengalaman lebih dari 30 tahun, PT Alakasa Industrindo Tbk berkomitmen untuk membangun rantai nilai aluminium dari bahan baku hingga menghasilkan produk berkualitas tinggi. Hubungan jangka panjang dengan mitra lokal dan global serta proses nilai tambah menjadi faktor kunci untuk menjadi organisasi yang berkelanjutan.',
     btn: 'Baca Lebih Lanjut Tentang Kami'
   },
+  highlights: {
+    expTitle: '30+',
+    expSub: 'Tahun Pengalaman',
+    expDesc: 'Tiga dekade keahlian di industri aluminium.',
+    intTitle: 'Terintegrasi',
+    intSub: 'Rantai Nilai',
+    intDesc: 'Dari bahan baku, manufaktur, perdagangan hingga penyulingan.',
+    globTitle: 'Global',
+    globSub: 'Mitra',
+    globDesc: 'Melayani pelanggan di pasar domestik dan internasional.',
+    susTitle: 'Keberlanjutan',
+    susSub: 'Komitmen',
+    susDesc: 'Operasi yang bertanggung jawab untuk masa depan yang lebih baik.',
+  },
   business: {
     title: 'Bisnis Kami',
     subtitle: 'Temukan segmen bisnis aluminium terpadu kami, yang dirancang untuk memberikan nilai tambah dari bahan baku hingga produk jadi.',

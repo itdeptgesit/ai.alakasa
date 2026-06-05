@@ -46,6 +46,20 @@ export const en = {
     desc: 'As a pioneer in the Aluminum industry in Indonesia with over 30 years’ experience, PT Alakasa Industry Tbk committed to establish an aluminum value chain from raw material to delivering high quality products. Long term relationships with local and global partners as well as value added processes become key factors to be a sustainable organization.',
     btn: 'Read More About Us'
   },
+  highlights: {
+    expTitle: '30+',
+    expSub: 'Years of Experience',
+    expDesc: 'Three decades of expertise in the aluminum industry.',
+    intTitle: 'Integrated',
+    intSub: 'Value Chain',
+    intDesc: 'From raw materials, manufacturing, trading to refining.',
+    globTitle: 'Global',
+    globSub: 'Partners',
+    globDesc: 'Serving customers in domestic and international markets.',
+    susTitle: 'Sustainability',
+    susSub: 'Commitment',
+    susDesc: 'Responsible operations for a better, sustainable future.',
+  },
   business: {
     title: 'Our Business',
     subtitle: 'Discover our integrated aluminum business segments, designed to deliver value from raw materials to finished products.',
