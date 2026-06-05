@@ -53,8 +53,9 @@ export default function StructurePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC]">
-      <Header />
+    <>
+      <main className="min-h-screen bg-[#F8FAFC]">
+        <Header />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-navy">
@@ -217,5 +218,7 @@ export default function StructurePage() {
       </section>
 
     </main>
+      <Footer />
+    </>
   );
 }
