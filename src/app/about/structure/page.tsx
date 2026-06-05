@@ -77,10 +77,10 @@ export default function StructurePage() {
             <span className="text-white">Corporate Structure</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
             Corporate <span className="text-primary">Structure</span>
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+          <p className="text-base md:text-lg text-white/80 max-w-2xl leading-relaxed">
             Discover the ownership hierarchy and operational subsidiaries that form the foundation of PT Alakasa Industrindo Tbk.
           </p>
         </div>
@@ -96,7 +96,8 @@ export default function StructurePage() {
           />
           
           {/* CSS Chart Container */}
-          <div className="mt-20 w-full max-w-4xl mx-auto overflow-x-auto pb-8">
+          <p className="text-center text-xs text-gray-400 mb-4 md:hidden">← Scroll sideways to view full chart →</p>
+          <div className="mt-20 w-full max-w-4xl mx-auto overflow-x-auto pb-8" style={{ WebkitOverflowScrolling: 'touch' }}>
             <div className="min-w-[700px] flex flex-col items-center">
               
               {/* Row 1 & 2: Top Level Columns */}
@@ -180,7 +181,7 @@ export default function StructurePage() {
                       {sub.alias && <p className="text-xs text-gray-500 mt-1.5">{sub.alias}</p>}
                     </div>
                   </div>
-                  <span className={`px-3 py-1 text-[10px] font-bold tracking-widest uppercase border ${
+                  <span className={`shrink-0 px-2 py-1 text-[9px] font-bold tracking-widest uppercase border ${
                     sub.status === 'Operating' ? 'border-green-600 text-green-700 bg-green-50/50' : 'border-gray-400 text-gray-600 bg-gray-50'
                   }`}>
                     {sub.status}

@@ -30,8 +30,8 @@ export default function ManagementPage() {
         {/* Static Hero Section */}
         <section className="relative h-[30vh] min-h-[250px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-navy to-[#0057B8]">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-          <div className="container relative z-10 text-center pt-20">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight drop-shadow-md">
+          <div className="container relative z-10 text-center pt-16 md:pt-20 px-4">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white font-heading tracking-tight drop-shadow-md">
               Management
             </h1>
           </div>
@@ -43,15 +43,18 @@ export default function ManagementPage() {
             
             <ManagementGallery />
 
-            <hr className="border-gray-200 mb-20" />
+            <hr className="border-gray-200 mb-12 md:mb-20" />
 
             {/* Organization Structure */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-16 font-heading">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary text-center mb-10 md:mb-16 font-heading">
                 Organization Structure
               </h2>
               
-              <div className="w-full overflow-x-auto pb-10 flex justify-center">
+              {/* Scrollable hint on mobile */}
+              <p className="text-center text-xs text-gray-400 mb-4 md:hidden">← Scroll sideways to view full chart →</p>
+              
+              <div className="w-full overflow-x-auto pb-10 flex justify-center" style={{ WebkitOverflowScrolling: 'touch' }}>
                 <div className="min-w-max flex flex-col items-center">
                   
                   {/* ROOT: Dewan Komisaris */}

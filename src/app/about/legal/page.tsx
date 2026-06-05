@@ -94,7 +94,7 @@ export default function LegalPage() {
             <span className="text-white">Legal & Compliance</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
             Legal & <span className="text-primary">Compliance</span>
           </h1>
           <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
@@ -201,8 +201,9 @@ export default function LegalPage() {
             centered
           />
           
+          <p className="text-center text-xs text-gray-400 mb-3 md:hidden">← Scroll sideways to view full table →</p>
           <div className="mt-16 bg-white border border-gray-300 shadow-sm overflow-hidden">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-navy text-white border-b border-white/10">

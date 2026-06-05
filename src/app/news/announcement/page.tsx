@@ -72,7 +72,7 @@ export default function AnnouncementPage() {
             <span className="text-white">Announcement</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
             Announcement
           </h1>
           <div className="w-20 h-1.5 bg-primary mb-6"></div>

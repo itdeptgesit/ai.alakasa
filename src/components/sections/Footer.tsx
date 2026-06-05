@@ -35,7 +35,7 @@ export const Footer = () => {
               </div>
             </Link>
             
-            <div className="mt-8 bg-white/[0.03] border border-white/10 rounded-2xl p-6 lg:w-[85%]">
+            <div className="mt-8 bg-white/[0.03] border border-white/10 p-6 lg:w-[85%]">
               <h4 className="text-white font-bold text-lg mb-2">Stay Updated</h4>
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                 Subscribe to get the latest news and<br />company updates.

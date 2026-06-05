@@ -63,7 +63,7 @@ export default function AnnualReportPage() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-white">Annual Report</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">Annual Report</h1>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">Annual Report</h1>
           <div className="w-20 h-1.5 bg-primary mb-6"></div>
           <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
             Comprehensive overviews of our financial performance, operational achievements, and strategic outlook over the years.

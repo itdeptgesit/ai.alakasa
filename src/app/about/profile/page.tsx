@@ -41,10 +41,10 @@ export default function ProfilePage() {
             <span className="text-white">Company Profile</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight mb-6 max-w-4xl">
             Company <span className="text-primary">Profile</span>
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+          <p className="text-base md:text-lg text-white/80 max-w-2xl leading-relaxed">
             Discover the heritage, vision, and mission driving PT Alakasa Industrindo Tbk towards excellence in the aluminum industry.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function ProfilePage() {
             </div>
 
             {/* Corporate Video */}
-            <div className="w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+            <div className="w-full overflow-hidden shadow-lg border border-gray-200">
               <CustomVideoPlayer 
                 src="https://ai.alakasa.co.id/wp-content/uploads/2022/10/VID-20221019-WA0012.mp4"
                 poster="https://images.unsplash.com/photo-1504917595217-d4f3e0339c8e?q=80&w=800&h=600&auto=format&fit=crop"
@@ -148,7 +148,7 @@ export default function ProfilePage() {
 
             {/* Text Content */}
             <div className="lg:col-span-7 flex flex-col justify-center order-1 lg:order-2">
-              <div className="bg-white p-8 rounded-3xl shadow-soft border border-gray-100">
+              <div className="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
                 <p className="text-base text-steel leading-relaxed mb-6 text-justify">
                   PT Alakasa Industrindo Tbk (the "Company") was established within the framework of the Foreign Capital Investment Law No. 1 year 1967, as amended by Law No. 11 year 1970 and amended most recently by the Capital Investment Law No. 25 year 2007, based on notarial Deed No. 31 dated February 21, 1972 of Soeleman Ardjasasmita, S.H., notary public in Jakarta.
                 </p>
