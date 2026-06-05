@@ -158,7 +158,7 @@ export const Header = () => {
                           {/* Links Column */}
                           <div className="flex-1 flex flex-col justify-center py-2">
                             {item.submenu?.links?.map((link, idx) => (
-                              link.isTitle ? (
+                              (link as any).isTitle ? (
                                 <span key={idx} className="text-[10px] xl:text-[11px] font-bold text-gray-400 uppercase tracking-widest mt-4 mb-2 px-3 border-b border-gray-100 pb-2">
                                   {link.label}
                                 </span>
@@ -280,7 +280,7 @@ export const Header = () => {
                             </Link>
                           ))
                         : item.submenu?.links?.map((link, idx) => (
-                            link.isTitle ? (
+                            (link as any).isTitle ? (
                               <span key={idx} className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mt-3 mb-1 block px-2">
                                 {link.label}
                               </span>
