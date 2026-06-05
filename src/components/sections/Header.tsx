@@ -145,9 +145,9 @@ export const Header = () => {
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                     <div className="bg-white rounded-[20px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-100 flex gap-6 w-auto">
                       
-                      {item.submenu.type === 'grid' ? (
+                      {item.submenu?.type === 'grid' ? (
                         <div className="flex gap-4 w-[600px] xl:w-[750px]">
-                          {item.submenu.items.map((gridItem, idx) => (
+                          {item.submenu?.items?.map((gridItem, idx) => (
                             <Link key={idx} href={gridItem.href} className="flex-1 h-[200px] xl:h-[240px] relative rounded-xl overflow-hidden group/card block">
                               <img src={gridItem.image} alt={gridItem.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110" />
                               <div className="absolute inset-0 bg-black/40 group-hover/card:bg-black/20 transition-colors" />
@@ -161,7 +161,7 @@ export const Header = () => {
                         <div className="flex gap-6 w-[580px] xl:w-[650px]">
                           {/* Links Column */}
                           <div className="flex-1 flex flex-col justify-center">
-                            {item.submenu.links.map((link, idx) => (
+                            {item.submenu?.links?.map((link, idx) => (
                               link.isTitle ? (
                                 <span key={idx} className="text-[10px] xl:text-xs font-bold text-navy uppercase tracking-wider mt-3 mb-1 px-3">
                                   {link.label}
