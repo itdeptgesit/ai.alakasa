@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ChevronRight, FileText, Download } from 'lucide-react';
+import { ChevronRight, Download } from 'lucide-react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 
@@ -17,10 +17,29 @@ export default function AnnualReportPage() {
 
   const reports = [
     { year: '2025', title: 'Annual Report 2025', url: 'http://ai.alakasa.co.id/wp-content/uploads/2026/04/ANNUAL-REPORT-2025-PT.-ALAKASA-INDUSTRINDO-TBK.pdf' },
-    { year: '2024', title: 'Annual Report 2024', url: 'https://ai.alakasa.co.id/wp-content/uploads/2025/04/Annual Report 2024 PT. Alakasa Industrindo Tbk.pdf' },
+    { year: '2024', title: 'Annual Report 2024', url: 'https://ai.alakasa.co.id/wp-content/uploads/2025/04/Annual%20Report%202024%20PT.%20Alakasa%20Industrindo%20Tbk.pdf' },
     { year: '2023', title: 'Annual Report 2023', url: 'http://ai.alakasa.co.id/wp-content/uploads/2024/04/ANNUAL-REPORT-2023-AI-TBK-ALKA.pdf' },
     { year: '2022', title: 'Annual Report 2022', url: 'http://ai.alakasa.co.id/wp-content/uploads/2023/05/AR-ALAKASA-2022_FINAL.pdf' },
     { year: '2021', title: 'Annual Report 2021', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/ANNUAL-REPORT-2021-AI-Tbk.pdf' },
+    { year: '2020', title: 'Annual Report 2020', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/ANNUAL-REPORT-2020-ALKA.pdf' },
+    { year: '2019', title: 'Annual Report 2019', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2019-PT-Alakasa-Industrindo-Tbk.pdf' },
+    { year: '2018', title: 'Annual Report 2018', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2018.pdf' },
+    { year: '2017', title: 'Annual Report 2017', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2017.pdf' },
+    { year: '2016', title: 'Annual Report 2016', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2016.pdf' },
+    { year: '2015', title: 'Annual Report 2015', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2015.pdf' },
+    { year: '2014', title: 'Annual Report 2014', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2014.pdf' },
+    { year: '2013', title: 'Annual Report 2013', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2013.pdf' },
+    { year: '2012', title: 'Annual Report 2012', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2012.pdf' },
+    { year: '2011', title: 'Annual Report 2011', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2011.pdf' },
+    { year: '2010', title: 'Annual Report 2010', url: 'http://ai.alakasa.co.id/wp-content/uploads/2022/09/Annual-Report-2010.pdf' },
+  ];
+
+  // Cover palette: cycle through these for visual variety
+  const coverStyles = [
+    { bg: 'bg-[#0B1F3A]', yearColor: 'text-[#C8A96E]', stripe: 'bg-[#C8A96E]' },
+    { bg: 'bg-[#1A3A5C]', yearColor: 'text-[#7BB8F0]', stripe: 'bg-[#4A90D9]' },
+    { bg: 'bg-[#0D2B1E]', yearColor: 'text-[#7DD4A8]', stripe: 'bg-[#4CAF7D]' },
+    { bg: 'bg-[#2C1A0E]', yearColor: 'text-[#F0A865]', stripe: 'bg-[#D4813A]' },
   ];
 
   return (
@@ -31,7 +50,7 @@ export default function AnnualReportPage() {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-navy">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop" 
+            src="https://ai.alakasa.co.id/wp-content/uploads/2022/12/s04.jpg" 
             alt="Corporate Reports" 
             className="w-full h-full object-cover grayscale"
           />
@@ -42,7 +61,7 @@ export default function AnnualReportPage() {
           <div className="flex items-center gap-2 text-sm text-white/70 mb-8 font-medium">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">News & Report</span>
+            <span className="text-white">News &amp; Report</span>
             <ChevronRight className="w-4 h-4" />
             <span className="text-white">Annual Report</span>
           </div>
@@ -57,56 +76,72 @@ export default function AnnualReportPage() {
         </div>
       </section>
 
-      {/* Main Content Area */}
+      {/* Main Content: Cover Grid */}
       <section className="py-20 md:py-28 bg-[#F8FAFC]">
-        <div className="container max-w-[1000px]">
-          
-          <div className="flex items-center gap-3 mb-4 justify-center">
-            <FileText className="w-6 h-6 text-primary" />
-            <h4 className="text-primary font-bold tracking-[0.2em] uppercase text-sm">
-              Document Archive
-            </h4>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-12 font-heading text-center">
-            Download Annual Reports
-          </h2>
+        <div className="container max-w-[1200px]">
 
-          <div className="mt-12 bg-white border border-gray-300">
-            {reports.map((report, index) => (
-              <a 
-                key={index}
-                href={report.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 transition-colors hover:bg-gray-50 ${
-                  index !== reports.length - 1 ? 'border-b border-gray-200' : ''
-                }`}
-              >
-                <div className="flex items-center gap-6 md:gap-10">
-                  {/* Year */}
-                  <div className="w-16 md:w-20 shrink-0">
-                    <span className="text-3xl md:text-4xl font-light text-navy">{report.year}</span>
-                  </div>
-                  
-                  {/* Title and Meta */}
-                  <div className="flex flex-col gap-1.5">
-                    <h3 className="text-lg md:text-xl font-bold text-navy group-hover:text-primary transition-colors uppercase tracking-wide">
-                      {report.title}
-                    </h3>
-                    <div className="flex items-center gap-2 mt-1">
-                      <FileText className="w-4 h-4 text-gray-400" />
-                      <span className="text-[11px] font-bold text-gray-500 uppercase tracking-widest">PDF Document</span>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            {reports.map((report, index) => {
+              const style = coverStyles[index % coverStyles.length];
+              return (
+                <div key={index} className="group flex flex-col">
+                  {/* Book Cover */}
+                  <a
+                    href={report.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative flex flex-col justify-between p-5 h-[220px] md:h-[260px] ${style.bg} overflow-hidden transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl cursor-pointer`}
+                  >
+                    {/* Top accent stripe */}
+                    <div className={`absolute top-0 left-0 w-full h-1 ${style.stripe}`} />
+
+                    {/* Top: Brand mark */}
+                    <div className="flex items-center gap-2">
+                      <div className={`w-4 h-4 ${style.stripe} opacity-80`} />
+                      <span className="text-white/50 text-[9px] font-bold tracking-[0.25em] uppercase">ALKA</span>
                     </div>
+
+                    {/* Middle: Year */}
+                    <div>
+                      <div className={`text-5xl md:text-6xl font-black leading-none mb-1 ${style.yearColor}`}>
+                        {report.year}
+                      </div>
+                      <div className="text-white/40 text-[9px] font-bold tracking-[0.3em] uppercase">
+                        Annual Report
+                      </div>
+                    </div>
+
+                    {/* Bottom: Company name */}
+                    <div>
+                      <div className={`w-6 h-[2px] ${style.stripe} mb-2`} />
+                      <p className="text-white/35 text-[8px] leading-tight uppercase tracking-wider">
+                        PT Alakasa<br />Industrindo Tbk
+                      </p>
+                    </div>
+
+                    {/* Decorative corner */}
+                    <div className={`absolute -bottom-8 -right-8 w-24 h-24 ${style.stripe} opacity-10`} />
+
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </a>
+
+                  {/* Below Cover: Title & Download */}
+                  <div className="pt-4 pb-2">
+                    <p className="text-sm font-bold text-navy mb-2">{report.title}</p>
+                    <a
+                      href={report.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-primary text-[11px] font-bold uppercase tracking-widest hover:gap-2.5 transition-all duration-200"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      Download
+                    </a>
                   </div>
                 </div>
-                
-                {/* Download Action */}
-                <div className="mt-6 md:mt-0 flex items-center gap-3 text-primary font-bold text-xs tracking-[0.2em] uppercase group-hover:translate-x-2 transition-transform self-end md:self-auto">
-                  Download
-                  <Download className="w-5 h-5" strokeWidth={2} />
-                </div>
-              </a>
-            ))}
+              );
+            })}
           </div>
 
         </div>
